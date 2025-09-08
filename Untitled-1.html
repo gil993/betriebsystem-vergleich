@@ -5,11 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Betriebssystem Vergleich</title>
 <style>
+    :root {
+        --primary: #4a90e2;
+        --secondary: #357abd;
+        --background: linear-gradient(135deg, #4a90e2, #2c3e50);
+        --card-bg: rgba(255,255,255,0.1);
+        --card-shadow: rgba(0,0,0,0.3);
+        --text-color: #fff;
+        --hover-bg: rgba(255,255,255,0.2);
+    }
+
+    * { box-sizing: border-box; margin:0; padding:0; }
+
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        margin: 0;
-        background: linear-gradient(135deg, #4a90e2, #2c3e50);
-        color: #fff;
+        background: var(--background);
+        color: var(--text-color);
         min-height: 100vh;
         display: flex;
         flex-direction: column;
@@ -18,9 +29,8 @@
     header {
         background: rgba(0,0,0,0.4);
         backdrop-filter: blur(10px);
-        color: white;
-        padding: 2rem;
         text-align: center;
+        padding: 2rem;
         font-size: 2rem;
         font-weight: bold;
         letter-spacing: 2px;
@@ -37,21 +47,20 @@
     }
 
     .os-card {
-        background: rgba(255,255,255,0.1);
+        background: var(--card-bg);
         backdrop-filter: blur(10px);
         border-radius: 20px;
-        box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        box-shadow: 0 8px 30px var(--card-shadow);
         padding: 2rem 1.5rem;
         text-align: center;
         cursor: pointer;
         transition: transform 0.4s ease, box-shadow 0.4s ease;
-        color: #fff;
-        animation: fadeUp 1s ease;
+        color: var(--text-color);
     }
 
     .os-card:hover {
-        transform: translateY(-15px) scale(1.05);
-        box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0 16px 40px var(--card-shadow);
     }
 
     .os-card img {
@@ -68,24 +77,21 @@
     }
 
     section {
-        background: rgba(255,255,255,0.1);
+        background: var(--card-bg);
         backdrop-filter: blur(12px);
         border-radius: 20px;
-        box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        box-shadow: 0 8px 30px var(--card-shadow);
         padding: 2rem;
         margin: 2rem;
-        animation: fadeUp 1.2s ease;
-        color: #fff;
     }
 
     table {
         width: 100%;
         border-collapse: collapse;
-        overflow: hidden;
     }
 
     thead {
-        background: linear-gradient(90deg, #4a90e2, #357abd);
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
         color: white;
     }
 
@@ -100,7 +106,7 @@
     }
 
     tbody tr:hover {
-        background: rgba(255,255,255,0.2);
+        background: var(--hover-bg);
     }
 
     .detail {
@@ -108,27 +114,24 @@
         padding: 2rem;
         max-width: 800px;
         margin: 3rem auto;
-        background: rgba(255,255,255,0.1);
+        background: var(--card-bg);
         backdrop-filter: blur(12px);
         border-radius: 20px;
-        box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-        animation: fadeUp 0.8s ease;
-        color: #fff;
+        box-shadow: 0 8px 30px var(--card-shadow);
+        color: var(--text-color);
     }
 
     .detail.active {
         display: block;
     }
 
-    .detail h2 {
-        margin-top: 0;
-    }
+    .detail h2 { margin-top: 0; }
 
     .back-btn {
         display: inline-block;
         margin-top: 1rem;
         padding: 0.7rem 1.5rem;
-        background: linear-gradient(90deg, #4a90e2, #357abd);
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
         color: white;
         border: none;
         border-radius: 12px;
@@ -137,9 +140,7 @@
         transition: transform 0.3s;
     }
 
-    .back-btn:hover {
-        transform: scale(1.1);
-    }
+    .back-btn:hover { transform: scale(1.1); }
 
     @keyframes fadeUp {
         from { opacity: 0; transform: translateY(30px); }
@@ -154,9 +155,7 @@
 </head>
 <body>
 
-<header>
-    <h1>Betriebssystem Vergleich</h1>
-</header>
+<header>Betriebssystem Vergleich</header>
 
 <main id="main-page">
     <div class="os-card" onclick="showDetail('windows')">
@@ -177,7 +176,7 @@
 </main>
 
 <section>
-    <h2 style="text-align:center; margin-bottom: 1rem;">Betriebssystem Vergleich</h2>
+    <h2 style="text-align:center; margin-bottom:1rem;">Betriebssystem Vergleich</h2>
     <div style="overflow-x:auto;">
         <table>
             <thead>
@@ -189,36 +188,11 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Kosten</td>
-                    <td>Kostenpflichtig</td>
-                    <td>Kostenpflichtig</td>
-                    <td>Kostenlos</td>
-                </tr>
-                <tr>
-                    <td>Sicherheit</td>
-                    <td>Mittel</td>
-                    <td>Hoch</td>
-                    <td>Sehr hoch</td>
-                </tr>
-                <tr>
-                    <td>Anpassung</td>
-                    <td>Mittel</td>
-                    <td>Wenig</td>
-                    <td>Sehr viel</td>
-                </tr>
-                <tr>
-                    <td>Programme</td>
-                    <td>Sehr viele</td>
-                    <td>Viele exklusive</td>
-                    <td>Viele kostenlose</td>
-                </tr>
-                <tr>
-                    <td>Einfachheit</td>
-                    <td>Einfach</td>
-                    <td>Sehr einfach</td>
-                    <td>Eher schwierig</td>
-                </tr>
+                <tr><td>Kosten</td><td>Kostenpflichtig</td><td>Kostenpflichtig</td><td>Kostenlos</td></tr>
+                <tr><td>Sicherheit</td><td>Mittel</td><td>Hoch</td><td>Sehr hoch</td></tr>
+                <tr><td>Anpassung</td><td>Mittel</td><td>Wenig</td><td>Sehr viel</td></tr>
+                <tr><td>Programme</td><td>Sehr viele</td><td>Viele exklusive</td><td>Viele kostenlose</td></tr>
+                <tr><td>Einfachheit</td><td>Einfach</td><td>Sehr einfach</td><td>Eher schwierig</td></tr>
             </tbody>
         </table>
     </div>
@@ -226,29 +200,20 @@
 
 <div id="windows" class="detail">
     <h2>Windows</h2>
-    <p>
-        Windows ist das am weitesten verbreitete System und wird von Microsoft entwickelt. 
-        Es ist für <strong>Privatpersonen</strong> und <strong>Firmen</strong> geeignet.
-    </p>
-    <p>
-        <strong>Bekannt für:</strong>
-    </p>
+    <p>Windows ist das am weitesten verbreitete System und wird von Microsoft entwickelt. Es ist für <strong>Privatpersonen</strong> und <strong>Firmen</strong> geeignet.</p>
+    <p><strong>Bekannt für:</strong></p>
     <ul>
         <li>einfache Bedienung</li>
         <li>läuft auf sehr vielen Geräten</li>
         <li>riesige Auswahl an Programmen und Spielen</li>
     </ul>
-    <p>
-        <strong>Vorteile:</strong>
-    </p>
+    <p><strong>Vorteile:</strong></p>
     <ul>
         <li>Sehr viele Programme</li>
         <li>Weit verbreitet</li>
         <li>Viele nützliche Funktionen</li>
     </ul>
-    <p>
-        <strong>Nachteile:</strong>
-    </p>
+    <p><strong>Nachteile:</strong></p>
     <ul>
         <li>Oft Ziel von Viren</li>
         <li>Braucht viele Updates</li>
@@ -259,29 +224,20 @@
 
 <div id="macos" class="detail">
     <h2>macOS</h2>
-    <p>
-        macOS läuft nur auf <strong>Apple-Computern</strong>. 
-        Es ist einfach zu bedienen und arbeitet gut mit iPhone, iPad und Apple Watch zusammen.
-    </p>
-    <p>
-        <strong>Bekannt für:</strong>
-    </p>
+    <p>macOS läuft nur auf <strong>Apple-Computern</strong>. Es ist einfach zu bedienen und arbeitet gut mit iPhone, iPad und Apple Watch zusammen.</p>
+    <p><strong>Bekannt für:</strong></p>
     <ul>
         <li>schicke und einfache Oberfläche</li>
         <li>hohe Sicherheit</li>
         <li>läuft stabil auch auf älteren Macs</li>
     </ul>
-    <p>
-        <strong>Vorteile:</strong>
-    </p>
+    <p><strong>Vorteile:</strong></p>
     <ul>
         <li>Sehr gute Zusammenarbeit mit Apple-Geräten</li>
         <li>Exklusive Profi-Programme für Musik und Video</li>
         <li>Seltener Virenprobleme</li>
     </ul>
-    <p>
-        <strong>Nachteile:</strong>
-    </p>
+    <p><strong>Nachteile:</strong></p>
     <ul>
         <li>Nur auf Apple-Computern nutzbar (teurer)</li>
         <li>Weniger Spiele</li>
@@ -292,50 +248,16 @@
 
 <div id="linux" class="detail">
     <h2>Linux</h2>
-    <p>
-        Linux ist ein <strong>kostenloses System</strong>. 
-        Es gibt viele verschiedene Varianten, z. B. Ubuntu oder Debian. 
-        Es wird oft auf <strong>Servern</strong> und von <strong>Entwicklern</strong> genutzt.
-    </p>
-    <p>
-       <strong>Bekannt für:</strong>
-    </p>
+    <p>Linux ist ein <strong>kostenloses System</strong>. Es gibt viele Varianten wie Ubuntu oder Debian. Es wird oft auf <strong>Servern</strong> und von <strong>Entwicklern</strong> genutzt.</p>
+    <p><strong>Bekannt für:</strong></p>
     <ul>
         <li>sehr anpassbar</li>
         <li>sehr sicher</li>
         <li>läuft auch auf alten Computern</li>
     </ul>
-    <p>
-        <strong>Vorteile:</strong>
-    </p>
+    <p><strong>Vorteile:</strong></p>
     <ul>
         <li>Kostenlos und offen</li>
         <li>Schnelle Updates</li>
         <li>Viele kostenlose Programme</li>
-        <li>Ideal für Technik-Fans</li>
-    </ul>
-    <p>
-        <strong>Nachteile:</strong>
-    </p>
-    <ul>
-        <li>Etwas schwerer für Anfänger</li>
-        <li>Manche Spiele und Programme fehlen</li>
-        <li>Man braucht manchmal mehr technisches Wissen</li>
-    </ul>
-    <button class="back-btn" onclick="backToMain()">Zurück</button>
-</div>
-
-<script>
-    function showDetail(os) {
-        document.getElementById('main-page').style.display = 'none';
-        document.getElementById(os).classList.add('active');
-    }
-
-    function backToMain() {
-        document.querySelectorAll('.detail').forEach(d => d.classList.remove('active'));
-        document.getElementById('main-page').style.display = 'grid';
-    }
-</script>
-
-</body>
-</html>
+        <li>Ideal für Technik-Fans</li
