@@ -17,20 +17,20 @@
 
     header {
         background: rgba(0,0,0,0.4);
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(0.6rem);
         color: white;
         padding: 2rem;
         text-align: center;
         font-size: 2rem;
         font-weight: bold;
-        letter-spacing: 2px;
-        text-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        letter-spacing: 0.15rem;
+        text-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.4);
         animation: fadeDown 1s ease;
     }
 
     main {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
         gap: 2rem;
         padding: 3rem;
         flex-grow: 1;
@@ -38,9 +38,9 @@
 
     .os-card {
         background: rgba(255,255,255,0.1);
-        backdrop-filter: blur(10px);
-        border-radius: 20px;
-        box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        backdrop-filter: blur(0.6rem);
+        border-radius: 1.25rem;
+        box-shadow: 0 0.5rem 2rem rgba(0,0,0,0.3);
         padding: 2rem 1.5rem;
         text-align: center;
         cursor: pointer;
@@ -50,16 +50,16 @@
     }
 
     .os-card:hover {
-        transform: translateY(-15px) scale(1.05);
-        box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+        transform: translateY(-1rem) scale(1.05);
+        box-shadow: 0 1rem 2.5rem rgba(0,0,0,0.5);
     }
 
     .os-card img {
-        width: 100px;
-        height: 100px;
+        width: 6rem;
+        height: 6rem;
         object-fit: contain;
         margin-bottom: 1rem;
-        filter: drop-shadow(0 4px 10px rgba(0,0,0,0.4));
+        filter: drop-shadow(0 0.25rem 0.6rem rgba(0,0,0,0.4));
     }
 
     .os-card h2 {
@@ -69,9 +69,9 @@
 
     section {
         background: rgba(255,255,255,0.1);
-        backdrop-filter: blur(12px);
-        border-radius: 20px;
-        box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        backdrop-filter: blur(0.75rem);
+        border-radius: 1.25rem;
+        box-shadow: 0 0.5rem 2rem rgba(0,0,0,0.3);
         padding: 2rem;
         margin: 2rem;
         animation: fadeUp 1.2s ease;
@@ -106,12 +106,12 @@
     .detail {
         display: none;
         padding: 2rem;
-        max-width: 800px;
+        max-width: 80%;
         margin: 3rem auto;
         background: rgba(255,255,255,0.1);
-        backdrop-filter: blur(12px);
-        border-radius: 20px;
-        box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+        backdrop-filter: blur(0.75rem);
+        border-radius: 1.25rem;
+        box-shadow: 0 0.5rem 2rem rgba(0,0,0,0.4);
         animation: fadeUp 0.8s ease;
         color: #fff;
     }
@@ -131,7 +131,7 @@
         background: linear-gradient(90deg, #4a90e2, #357abd);
         color: white;
         border: none;
-        border-radius: 12px;
+        border-radius: 0.75rem;
         cursor: pointer;
         font-size: 1rem;
         transition: transform 0.3s;
@@ -142,12 +142,12 @@
     }
 
     @keyframes fadeUp {
-        from { opacity: 0; transform: translateY(30px); }
+        from { opacity: 0; transform: translateY(2rem); }
         to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes fadeDown {
-        from { opacity: 0; transform: translateY(-30px); }
+        from { opacity: 0; transform: translateY(-2rem); }
         to { opacity: 1; transform: translateY(0); }
     }
 </style>
